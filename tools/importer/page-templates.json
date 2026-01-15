@@ -2,20 +2,24 @@
   "templates": [
     {
       "name": "lg-experience",
-      "urls": ["https://www.lg.com/de/lg-experience"],
-      "description": "LG Experience blog landing page template",
+      "urls": ["https://www.lg.com/de/lg-experience", "https://www.lg.com/fr/lg-experience"],
+      "description": "LG Experience blog landing page template with featured carousel, article cards, promotional banners, and product tabs",
       "blocks": [
         {
           "name": "carousel-featured",
-          "instances": [".lg-exp-hero-slider", ".hero-carousel"]
+          "instances": [".cmp-carousel.c-carousel", ".swiper.c-carousel"]
         },
         {
           "name": "cards-article",
-          "instances": [".article-grid .article-card", ".article-tiles .tile"]
+          "instances": [".lg-tile-box.js-grid-item", ".entry-box.js-grid-item"]
+        },
+        {
+          "name": "hero-promotional",
+          "instances": [".lg-tile-box.js-grid-item[data-bg-color]", ".lg-tile-float-box"]
         },
         {
           "name": "tabs-products",
-          "instances": [".tabs-container", ".category-tabs"]
+          "instances": ["#essentials-tabs-container", ".essential-module-tabs"]
         }
       ]
     },

@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-promotional",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-01-15T12:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.lg.com/fr/lg-experience",
+    "originPage": "LG Experience France - OLED Celebration Banner",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "comfortable",
+    "purpose": "promotional-banner",
+    "imagePattern": "background"
+  },
+  "contentPattern": {
+    "structure": "background image + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional banners",
+      "milestone celebrations",
+      "full-width announcements",
+      "campaign hero sections"
+    ],
+    "notSuitableFor": [
+      "standard page heroes",
+      "text-only sections",
+      "product detail pages"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/fr/lg-experience"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T12:00:00.000Z"
+  }
+}

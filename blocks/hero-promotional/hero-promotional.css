@@ -1,0 +1,57 @@
+.hero-promotional-container .hero-promotional-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-promotional {
+  position: relative;
+  padding: 60px 24px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-promotional h1,
+.hero-promotional h2 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+  text-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+}
+
+.hero-promotional p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+  font-size: var(--body-font-size-m);
+}
+
+.hero-promotional picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero-promotional img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-promotional a.button {
+  margin-top: 20px;
+}
+
+@media (width >= 900px) {
+  .hero-promotional {
+    padding: 80px 32px;
+    min-height: 500px;
+  }
+}
