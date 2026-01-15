@@ -1,2 +1,2 @@
 mountpoints:
-  /: https://github.com/varawat/migrationtest-lgeds/tree/main
+  /content: https://content.da.live/varawat/migrationtest-lgeds/main/content
