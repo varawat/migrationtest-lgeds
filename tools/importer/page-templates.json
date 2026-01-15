@@ -1,0 +1,117 @@
+{
+  "templates": [
+    {
+      "name": "lg-experience",
+      "description": "LG Experience blog landing page template",
+      "urlPattern": "/de/lg-experience",
+      "sections": [
+        {
+          "id": "hero-carousel",
+          "name": "Hero Carousel",
+          "selector": ".lg-exp-hero-slider, .hero-carousel, [data-component='hero-slider']",
+          "blocks": [
+            {
+              "variant": "carousel-featured",
+              "selector": ".hero-slide, .carousel-item",
+              "description": "Featured article carousel with image, category tag, and headline"
+            }
+          ]
+        },
+        {
+          "id": "featured-articles",
+          "name": "Featured Articles",
+          "selector": ".article-grid, .featured-articles, [data-component='article-list']",
+          "blocks": [
+            {
+              "variant": "cards-article",
+              "selector": ".article-card, .article-tile",
+              "description": "Article cards with image, category tag, title, and description"
+            }
+          ]
+        },
+        {
+          "id": "article-tiles",
+          "name": "Article Tiles Grid",
+          "selector": ".article-tiles, .content-grid",
+          "blocks": [
+            {
+              "variant": "cards-article",
+              "selector": ".tile, .card",
+              "description": "Article tiles in grid format"
+            }
+          ]
+        },
+        {
+          "id": "brand-section",
+          "name": "LG Experience Branding",
+          "selector": ".brand-section, .lg-experience-logo",
+          "sectionMetadata": {
+            "style": "brand-centered"
+          },
+          "defaultContent": true,
+          "description": "Large centered LG EXPERIENCE branding text"
+        },
+        {
+          "id": "tech-hub-articles",
+          "name": "Tech Hub Articles",
+          "selector": ".tech-hub-articles, [data-category='tech-hub']",
+          "blocks": [
+            {
+              "variant": "cards-article",
+              "selector": ".article-card",
+              "description": "Tech Hub article cards"
+            }
+          ]
+        },
+        {
+          "id": "essentials",
+          "name": "Essentials Section",
+          "selector": ".essentials-section, [data-component='essentials']",
+          "blocks": [
+            {
+              "variant": "tabs-products",
+              "selector": ".tabs-container, .category-tabs",
+              "description": "Tabbed product category browser"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "titleSelector": "meta[property='og:title']",
+        "descriptionSelector": "meta[property='og:description']",
+        "imageSelector": "meta[property='og:image']"
+      }
+    }
+  ],
+  "blockVariants": {
+    "carousel-featured": {
+      "baseBlock": "carousel",
+      "parser": "carousel-featured.js",
+      "contentModel": {
+        "image": "required",
+        "category": "optional",
+        "title": "required",
+        "link": "required"
+      }
+    },
+    "cards-article": {
+      "baseBlock": "cards",
+      "parser": "cards-article.js",
+      "contentModel": {
+        "image": "required",
+        "category": "optional",
+        "title": "required",
+        "description": "optional",
+        "link": "required"
+      }
+    },
+    "tabs-products": {
+      "baseBlock": "tabs",
+      "parser": "tabs-products.js",
+      "contentModel": {
+        "tabLabel": "required",
+        "items": "required"
+      }
+    }
+  }
+}

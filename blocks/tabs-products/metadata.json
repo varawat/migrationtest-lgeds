@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-products",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-01-15T10:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.lg.com/de/lg-experience",
+    "originPage": "LG Experience blog landing page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "product-categories",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "tab label + product grid",
+    "buttonCount": 0,
+    "imageCount": "multiple"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product category browsers",
+      "categorized content sections",
+      "multi-category product showcases"
+    ],
+    "notSuitableFor": [
+      "FAQ sections",
+      "content-heavy tabs",
+      "form wizards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/de/lg-experience"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T10:45:00.000Z"
+  }
+}

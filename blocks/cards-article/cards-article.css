@@ -1,0 +1,71 @@
+.cards-article > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.cards-article > ul > li {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cards-article > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.cards-article .cards-article-card-body {
+  padding: 16px 20px 20px;
+}
+
+.cards-article .cards-article-card-body .category-tag {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.cards-article .cards-article-card-body .category-tag.hilfreiche-tipps {
+  color: #f5a623;
+}
+
+.cards-article .cards-article-card-body .category-tag.tech-hub {
+  color: #666;
+}
+
+.cards-article .cards-article-card-body h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.cards-article .cards-article-card-body p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.cards-article .cards-article-card-image {
+  line-height: 0;
+}
+
+.cards-article > ul > li img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (width >= 900px) {
+  .cards-article > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

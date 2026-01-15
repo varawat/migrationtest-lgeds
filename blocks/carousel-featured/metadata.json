@@ -1,0 +1,40 @@
+{
+  "variantName": "carousel-featured",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-01-15T10:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.lg.com/de/lg-experience",
+    "originPage": "LG Experience blog landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "comfortable",
+    "purpose": "featured-articles",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + category tag + headline",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured article carousels",
+      "blog hero sections",
+      "news highlight rotators",
+      "content spotlight sections"
+    ],
+    "notSuitableFor": [
+      "product carousels",
+      "image galleries",
+      "testimonial sliders"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/de/lg-experience"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T10:45:00.000Z"
+  }
+}
