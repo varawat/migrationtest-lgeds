@@ -5,43 +5,43 @@
 export default function transform(document) {
   // Remove navigation and header elements
   const navElements = document.querySelectorAll(
-    'header, nav, .header, .navigation, .gnb, .lnb, .mega-menu'
+    'header, nav, .header, .navigation, .gnb, .lnb, .mega-menu',
   );
-  navElements.forEach(el => el.remove());
+  navElements.forEach((el) => el.remove());
 
   // Remove footer elements
   const footerElements = document.querySelectorAll(
-    'footer, .footer, .site-footer'
+    'footer, .footer, .site-footer',
   );
-  footerElements.forEach(el => el.remove());
+  footerElements.forEach((el) => el.remove());
 
   // Remove cookie banners and popups
   const popupElements = document.querySelectorAll(
-    '.cookie-banner, .onetrust-consent, .popup, .modal, [id*="cookie"]'
+    '.cookie-banner, .onetrust-consent, .popup, .modal, [id*="cookie"]',
   );
-  popupElements.forEach(el => el.remove());
+  popupElements.forEach((el) => el.remove());
 
   // Remove scripts and styles
   const scriptElements = document.querySelectorAll(
-    'script, style, noscript, iframe[src*="analytics"], iframe[src*="tracking"]'
+    'script, style, noscript, iframe[src*="analytics"], iframe[src*="tracking"]',
   );
-  scriptElements.forEach(el => el.remove());
+  scriptElements.forEach((el) => el.remove());
 
   // Remove social share widgets
   const socialElements = document.querySelectorAll(
-    '.social-share, .share-buttons, [class*="social-"]'
+    '.social-share, .share-buttons, [class*="social-"]',
   );
-  socialElements.forEach(el => el.remove());
+  socialElements.forEach((el) => el.remove());
 
   // Remove hidden elements
   const hiddenElements = document.querySelectorAll(
-    '[style*="display: none"], [style*="visibility: hidden"], .hidden, .sr-only'
+    '[style*="display: none"], [style*="visibility: hidden"], .hidden, .sr-only',
   );
-  hiddenElements.forEach(el => el.remove());
+  hiddenElements.forEach((el) => el.remove());
 
   // Remove empty elements
   const emptyElements = document.querySelectorAll('div:empty, span:empty, p:empty');
-  emptyElements.forEach(el => {
+  emptyElements.forEach((el) => {
     if (!el.querySelector('img, picture, video, iframe')) {
       el.remove();
     }

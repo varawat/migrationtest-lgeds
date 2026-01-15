@@ -7,38 +7,6 @@
  */
 
 /**
- * Parse article cards container into table cells
- * @param {Element} element - The container element with article cards
- * @returns {Array} Array of arrays representing table rows
- */
-export function parse(element) {
-  const rows = [];
-
-  // Find all article cards
-  const cards = element.querySelectorAll(
-    '.article-card, .article-tile, .card, .tile, [data-component="article"], article'
-  );
-
-  if (cards.length === 0) {
-    // Single card - treat element itself as card
-    const cardData = parseCard(element);
-    if (cardData) {
-      rows.push(cardData);
-    }
-  } else {
-    // Multiple cards
-    cards.forEach(card => {
-      const cardData = parseCard(card);
-      if (cardData) {
-        rows.push(cardData);
-      }
-    });
-  }
-
-  return rows;
-}
-
-/**
  * Parse individual card content
  * @param {Element} card - Individual card element
  * @returns {Array} [imageCell, contentCell] for the row
@@ -50,7 +18,7 @@ function parseCard(card) {
 
   // Extract category tag
   const categoryEl = card.querySelector(
-    '.category, .tag, [class*="category"], [class*="tag"], .label'
+    '.category, .tag, [class*="category"], [class*="tag"], .label',
   );
   const category = categoryEl ? `**${categoryEl.textContent.trim()}**` : '';
 
@@ -83,6 +51,38 @@ function parseCard(card) {
   }
 
   return [imageHtml, contentCell];
+}
+
+/**
+ * Parse article cards container into table cells
+ * @param {Element} element - The container element with article cards
+ * @returns {Array} Array of arrays representing table rows
+ */
+export function parse(element) {
+  const rows = [];
+
+  // Find all article cards
+  const cards = element.querySelectorAll(
+    '.article-card, .article-tile, .card, .tile, [data-component="article"], article',
+  );
+
+  if (cards.length === 0) {
+    // Single card - treat element itself as card
+    const cardData = parseCard(element);
+    if (cardData) {
+      rows.push(cardData);
+    }
+  } else {
+    // Multiple cards
+    cards.forEach((card) => {
+      const cardData = parseCard(card);
+      if (cardData) {
+        rows.push(cardData);
+      }
+    });
+  }
+
+  return rows;
 }
 
 /**

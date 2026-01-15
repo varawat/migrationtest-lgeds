@@ -7,47 +7,6 @@
  */
 
 /**
- * Parse tabs container into table cells
- * @param {Element} element - The tabs container element
- * @returns {Array} Array of arrays representing table rows (one per tab)
- */
-export function parse(element) {
-  const rows = [];
-
-  // Find tab buttons/labels
-  const tabButtons = element.querySelectorAll(
-    '.tab-button, .tab-label, [role="tab"], button[data-tab], .nav-tab'
-  );
-
-  // Find tab panels/content
-  const tabPanels = element.querySelectorAll(
-    '.tab-panel, .tab-content, [role="tabpanel"], .tab-pane'
-  );
-
-  if (tabButtons.length === 0) {
-    // No structured tabs found, try alternative parsing
-    const sections = element.querySelectorAll('[data-category], .category-section');
-    sections.forEach(section => {
-      const tabData = parseTabSection(section);
-      if (tabData) {
-        rows.push(tabData);
-      }
-    });
-  } else {
-    // Parse each tab
-    tabButtons.forEach((button, index) => {
-      const panel = tabPanels[index] || null;
-      const tabData = parseTab(button, panel);
-      if (tabData) {
-        rows.push(tabData);
-      }
-    });
-  }
-
-  return rows;
-}
-
-/**
  * Parse individual tab and its content
  * @param {Element} button - Tab button element
  * @param {Element} panel - Tab panel element (optional)
@@ -63,11 +22,11 @@ function parseTab(button, panel) {
 
   if (panel) {
     const items = panel.querySelectorAll(
-      '.product-item, .category-item, a, .item'
+      '.product-item, .category-item, a, .item',
     );
 
     const itemsMarkdown = [];
-    items.forEach(item => {
+    items.forEach((item) => {
       const img = item.querySelector('img');
       const text = item.querySelector('.title, .name, span, p');
       const link = item.href || item.querySelector('a')?.href;
@@ -99,14 +58,14 @@ function parseTab(button, panel) {
  * @returns {Array} [labelCell, contentCell] for the row
  */
 function parseTabSection(section) {
-  const label = section.getAttribute('data-category') ||
-                section.querySelector('.category-title')?.textContent?.trim() ||
-                'Category';
+  const label = section.getAttribute('data-category')
+                || section.querySelector('.category-title')?.textContent?.trim()
+                || 'Category';
 
   const items = section.querySelectorAll('a, .item');
   const itemsMarkdown = [];
 
-  items.forEach(item => {
+  items.forEach((item) => {
     const img = item.querySelector('img');
     const text = item.textContent.trim();
     const link = item.href || item.querySelector('a')?.href;
@@ -119,6 +78,47 @@ function parseTabSection(section) {
   });
 
   return [label, itemsMarkdown.join('\n')];
+}
+
+/**
+ * Parse tabs container into table cells
+ * @param {Element} element - The tabs container element
+ * @returns {Array} Array of arrays representing table rows (one per tab)
+ */
+export function parse(element) {
+  const rows = [];
+
+  // Find tab buttons/labels
+  const tabButtons = element.querySelectorAll(
+    '.tab-button, .tab-label, [role="tab"], button[data-tab], .nav-tab',
+  );
+
+  // Find tab panels/content
+  const tabPanels = element.querySelectorAll(
+    '.tab-panel, .tab-content, [role="tabpanel"], .tab-pane',
+  );
+
+  if (tabButtons.length === 0) {
+    // No structured tabs found, try alternative parsing
+    const sections = element.querySelectorAll('[data-category], .category-section');
+    sections.forEach((section) => {
+      const tabData = parseTabSection(section);
+      if (tabData) {
+        rows.push(tabData);
+      }
+    });
+  } else {
+    // Parse each tab
+    tabButtons.forEach((button, index) => {
+      const panel = tabPanels[index] || null;
+      const tabData = parseTab(button, panel);
+      if (tabData) {
+        rows.push(tabData);
+      }
+    });
+  }
+
+  return rows;
 }
 
 /**

@@ -7,36 +7,6 @@
  */
 
 /**
- * Parse a carousel slide element into table cells
- * @param {Element} element - The carousel slide element
- * @returns {Array} Array of arrays representing table rows
- */
-export function parse(element) {
-  const rows = [];
-
-  // Find all slides
-  const slides = element.querySelectorAll('.hero-slide, .carousel-item, .slide, [data-slide]');
-
-  if (slides.length === 0) {
-    // Single slide - treat element itself as slide
-    const slideData = parseSlide(element);
-    if (slideData) {
-      rows.push(slideData);
-    }
-  } else {
-    // Multiple slides
-    slides.forEach(slide => {
-      const slideData = parseSlide(slide);
-      if (slideData) {
-        rows.push(slideData);
-      }
-    });
-  }
-
-  return rows;
-}
-
-/**
  * Parse individual slide content
  * @param {Element} slide - Individual slide element
  * @returns {Array} [imageCell, contentCell] for the row
@@ -70,6 +40,36 @@ function parseSlide(slide) {
   }
 
   return [imageHtml, contentCell];
+}
+
+/**
+ * Parse a carousel slide element into table cells
+ * @param {Element} element - The carousel slide element
+ * @returns {Array} Array of arrays representing table rows
+ */
+export function parse(element) {
+  const rows = [];
+
+  // Find all slides
+  const slides = element.querySelectorAll('.hero-slide, .carousel-item, .slide, [data-slide]');
+
+  if (slides.length === 0) {
+    // Single slide - treat element itself as slide
+    const slideData = parseSlide(element);
+    if (slideData) {
+      rows.push(slideData);
+    }
+  } else {
+    // Multiple slides
+    slides.forEach((slide) => {
+      const slideData = parseSlide(slide);
+      if (slideData) {
+        rows.push(slideData);
+      }
+    });
+  }
+
+  return rows;
 }
 
 /**
