@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-hero-images",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-15T11:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site",
+    "originPage": "Fashion blog homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "hero-images",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 side-by-side square images",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "hero sections with dual images",
+      "visual storytelling sections",
+      "lifestyle imagery displays"
+    ],
+    "notSuitableFor": [
+      "text-heavy content",
+      "product comparisons",
+      "data tables"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T11:25:00.000Z"
+  }
+}
