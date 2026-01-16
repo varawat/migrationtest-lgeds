@@ -1,13 +1,15 @@
+/* Carousel Featured - LG Design */
 .carousel-featured {
   position: relative;
-  background: #f5f5f5;
-  padding: 40px 0;
+  background: var(--light-color);
+  padding: var(--spacing-xl) 0;
 }
 
 .carousel-featured-slides {
   position: relative;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 var(--spacing-m);
   overflow: hidden;
 }
 
@@ -22,7 +24,7 @@
 
 .carousel-featured-image {
   line-height: 0;
-  border-radius: 8px;
+  border-radius: var(--border-radius-m);
   overflow: hidden;
 }
 
@@ -33,68 +35,73 @@
 }
 
 .carousel-featured-content {
-  padding: 24px 0;
+  padding: var(--spacing-m) 0;
 }
 
 .carousel-featured-content .category-tag {
   display: inline-block;
-  font-size: 12px;
+  font-size: var(--body-font-size-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 4px 12px;
-  border-radius: 4px;
-  margin-bottom: 12px;
-}
-
-.carousel-featured-content .category-tag.tech-hub {
-  background: #666;
-  color: white;
-}
-
-.carousel-featured-content .category-tag.hilfreiche-tipps {
-  background: #f5a623;
-  color: white;
+  color: var(--lg-red);
+  margin-bottom: var(--spacing-s);
 }
 
 .carousel-featured-content h2,
 .carousel-featured-content h3 {
-  font-size: 28px;
+  font-size: var(--heading-font-size-l);
   line-height: 1.3;
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.carousel-featured-content h2 a,
+.carousel-featured-content h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.carousel-featured-content h2 a:hover,
+.carousel-featured-content h3 a:hover {
+  color: var(--lg-red);
 }
 
 .carousel-featured-nav {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  padding: 20px 0;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-m) 0;
 }
 
 .carousel-featured-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid #a50034;
+  border: 2px solid var(--lg-red);
   background: transparent;
   cursor: pointer;
   padding: 0;
-  transition: background 0.2s ease;
+  transition: background var(--transition-base);
 }
 
 .carousel-featured-dot.active,
 .carousel-featured-dot:hover {
-  background: #a50034;
+  background: var(--lg-red);
 }
 
 @media (width >= 900px) {
   .carousel-featured {
-    padding: 60px 0;
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .carousel-featured-slides {
+    padding: 0 var(--spacing-xl);
   }
 
   .carousel-featured-content h2,
   .carousel-featured-content h3 {
-    font-size: 36px;
+    font-size: var(--heading-font-size-xl);
   }
 }

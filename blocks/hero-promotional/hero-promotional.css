@@ -1,3 +1,4 @@
+/* Hero Promotional - LG Design */
 .hero-promotional-container .hero-promotional-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,35 +6,52 @@
 
 .hero-promotional {
   position: relative;
-  padding: 60px 24px;
+  padding: var(--spacing-xxl) var(--spacing-m);
   min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: var(--dark-color);
+}
+
+.hero-promotional::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 40%), rgb(0 0 0 / 60%));
+  z-index: 1;
+}
+
+.hero-promotional > * {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-promotional h1,
 .hero-promotional h2 {
-  max-width: 1200px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   color: var(--background-color);
-  text-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+  text-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
 }
 
 .hero-promotional p {
-  max-width: 800px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   color: var(--background-color);
   font-size: var(--body-font-size-m);
+  opacity: 0.95;
 }
 
 .hero-promotional picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   object-fit: cover;
   box-sizing: border-box;
@@ -46,12 +64,31 @@
 }
 
 .hero-promotional a.button {
-  margin-top: 20px;
+  margin-top: var(--spacing-m);
+  background-color: var(--lg-red);
+  border-color: var(--lg-red);
+  color: var(--background-color);
+  padding: 14px 32px;
+  font-weight: 600;
+}
+
+.hero-promotional a.button:hover {
+  background-color: var(--lg-red-dark);
+  border-color: var(--lg-red-dark);
 }
 
 @media (width >= 900px) {
   .hero-promotional {
-    padding: 80px 32px;
+    padding: 100px var(--spacing-xl);
     min-height: 500px;
+  }
+
+  .hero-promotional h1,
+  .hero-promotional h2 {
+    font-size: var(--heading-font-size-xxl);
+  }
+
+  .hero-promotional p {
+    font-size: var(--heading-font-size-xs);
   }
 }
